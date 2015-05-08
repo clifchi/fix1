@@ -186,6 +186,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="addcase.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
@@ -194,8 +195,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="ddlist.aspx" />
+    <Content Include="dispose.aspx" />
+    <Content Include="flow.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fwe3.aspx" />
+    <Content Include="get.aspx" />
+    <Content Include="list.aspx" />
+    <Content Include="manageaccount.aspx" />
+    <Content Include="managecase.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -234,10 +241,13 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="setupddl.aspx" />
+    <Content Include="Site.Master" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -351,6 +361,13 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="addcase.aspx.designer.vb">
+      <DependentUpon>addcase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addcase.aspx.vb">
+      <DependentUpon>addcase.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\IdentityConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
@@ -369,13 +386,6 @@
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="ddlist.aspx.designer.vb">
-      <DependentUpon>ddlist.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ddlist.aspx.vb">
-      <DependentUpon>ddlist.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -383,8 +393,57 @@
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dispose.aspx.designer.vb">
+      <DependentUpon>dispose.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dispose.aspx.vb">
+      <DependentUpon>dispose.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="flow.aspx.designer.vb">
+      <DependentUpon>flow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="flow.aspx.vb">
+      <DependentUpon>flow.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="fwe3.aspx.designer.vb">
+      <DependentUpon>fwe3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fwe3.aspx.vb">
+      <DependentUpon>fwe3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="get.aspx.designer.vb">
+      <DependentUpon>get.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="get.aspx.vb">
+      <DependentUpon>get.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="list.aspx.designer.vb">
+      <DependentUpon>list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="list.aspx.vb">
+      <DependentUpon>list.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="manageaccount.aspx.designer.vb">
+      <DependentUpon>manageaccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manageaccount.aspx.vb">
+      <DependentUpon>manageaccount.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="managecase.aspx.designer.vb">
+      <DependentUpon>managecase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="managecase.aspx.vb">
+      <DependentUpon>managecase.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Models\IdentityModels.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -406,11 +465,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="setupddl.aspx.designer.vb">
+      <DependentUpon>setupddl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setupddl.aspx.vb">
+      <DependentUpon>setupddl.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.vb">
       <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.vb">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.vb">
+      <DependentUpon>Site2.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Startup.vb" />
@@ -447,7 +520,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <Content Include="Site.Master" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="ViewSwitcher.ascx" />
   </ItemGroup>

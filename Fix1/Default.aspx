@@ -4,28 +4,34 @@
 
     <div class="jumbotron">
         <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <p class="lead">資訊中心提醒您：請修電腦前，請確認資料是否皆已備份完成。</p>
+        <p><a href="http://163.25.114.38/addcomfirm.aspx" class="btn btn-primary btn-lg">備份方法 &raquo;</a></p>
     </div>
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting Started</h2>
+            <h2>維修現況</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                    <Columns>
+                        <asp:BoundField DataField="createtime" HeaderText="createtime" SortExpression="createtime" />
+                        <asp:BoundField DataField="caseType" HeaderText="caseType" SortExpression="caseType" />
+                        <asp:BoundField DataField="assetID" HeaderText="assetID" SortExpression="assetID" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [createtime], [caseType], [assetID] FROM [case] ORDER BY [createtime]"></asp:SqlDataSource>
             </p>
             <p>
                 <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
+            <h2>電腦維修小幫手</h2>
             <p>
                 NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                <a class="btn btn-default" href="http://163.25.114.38/solution.aspx">請參考 &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">

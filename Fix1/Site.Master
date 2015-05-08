@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="Fix1.SiteMaster" %>
-
 <%@ Import Namespace="Fix1" %>
 <%@ Import Namespace="Microsoft.AspNet.Identity" %>
 <!DOCTYPE html>
@@ -9,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - 我的 ASP.NET  應用程式</title>
+    <title><%: Page.Title %> - 資訊中心電腦請修系統</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -50,13 +49,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">應用程式名稱</a>
+                    <a class="navbar-brand" runat="server" href="~/">請修系統</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">首頁</a></li>
-                        <li><a runat="server" href="~/About">關於</a></li>
-                        <li><a runat="server" href="~/Contact">連絡人</a></li>
+                        <li><a runat="server" href="~/addcase">申請</a></li>
+                        <li><a runat="server" href="~/get">硬體待收</a></li>
+                        <li><a runat="server" href="~/list">個人案件查詢</a></li>
+                        <li><a runat="server" href="~/managecase">現行案件列表</a></li>
+                        <li><a runat="server" href="~/manageaccount">管理者帳號設定</a></li>
+                        <li><a runat="server" href="~/setupddl">清單設定</a></li>
+
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -67,6 +70,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="登出" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
@@ -82,7 +86,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - 我的 ASP.NET  應用程式</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Demo  應用程式</p>
             </footer>
         </div>
     </form>

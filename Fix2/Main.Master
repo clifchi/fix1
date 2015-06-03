@@ -1,0 +1,71 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main.master.vb" Inherits="Fix2.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+  
+    </asp:ContentPlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+                <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">資訊中心請修系統</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" id="AddCase" href="~/addcase" visible="False">申請</a></li>
+                        <li><a runat="server" id="GetHW" href="~/gethw" visible="False">硬體待收</a></li>
+                        <li><a runat="server" id="PersonalCase" href="~/personalcase" visible="False">個人案件查詢</a></li>
+                        <li><a runat="server" id="ManageCase" href="~/managecase" visible="False" >處理維修單</a></li>
+                        <asp:ContentPlaceHolder ID="Adminsetup" runat="server" Visible="false">
+                        <li class="dropdown" >
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">設定<span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="user">使用者管理</a></li>
+                            <li><a href="message">公告訊息設定</a></li>
+                            <li class="divider"></li>
+                            <li><a href="typeidlist">類別代號設定</a></li>
+                            <li><a href="deptidlist">單位代號設定</a></li>
+                            <li><a href="flowidlist">流程代號設定</a></li>
+                          </ul>
+                        </li>
+                        </asp:ContentPlaceHolder>
+                        
+                       
+                    </ul>
+                     <ul class="nav navbar-nav navbar-right">             
+                                <li><a runat="server" id="login" href="~/login">登入</a></li>
+                                <li><a runat="server" id="username" href="#"><%: Session("Account")%></a></li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+    <div class="container body-content">
+        
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+         <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - 我的 ASP.NET  應用程式</p>
+            </footer>
+    </div>
+   </form>
+</body>
+</html>
